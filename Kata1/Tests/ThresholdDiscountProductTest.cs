@@ -5,7 +5,7 @@ using TestUtilities.Extensions;
 
 namespace Kata1.Tests
 {
-    public class when_buying_a_ThresholdDiscountedProduct : InstanceContextSpecification<IItem>
+    public class when_buying_a_ThreshHoldDiscountedProduct : InstanceContextSpecification<IItem>
     {
         private double unitPrice;
         private int quantityWithDiscount;
@@ -32,13 +32,24 @@ namespace Kata1.Tests
         [Test]
         public void should_pay_second_item_full_price()
         {
-            sut.PriceFor(2).ShouldBeEqualTo(unitPrice *2);
+            sut.PriceFor(2).ShouldBeEqualTo(unitPrice*2);
         }
 
         [Test]
         public void should_pay_third_item_with_discount()
         {
-            sut.PriceFor(3).ShouldBeEqualTo(unitPrice * (2 + discount));
+            sut.PriceFor(3).ShouldBeEqualTo(unitPrice*(2 + discount));
+        }
+
+        [Test]
+        public void should_pay_every_third_item_with_discount()
+        {
+            for (var i = 0; i < 100; i++)
+            {
+                var numberOfDiscountedItems = i/quantityWithDiscount;
+                var numberOfNormalItems = i - numberOfDiscountedItems;
+                sut.PriceFor(i).ShouldBeEqualTo(unitPrice*(numberOfNormalItems + (numberOfDiscountedItems*discount)));
+            }
         }
     }
 }
