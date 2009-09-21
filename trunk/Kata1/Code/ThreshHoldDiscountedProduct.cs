@@ -15,18 +15,9 @@ namespace Kata1.Code
 
         public double PriceFor(int quantity)
         {
-            double price = 0;
-
-            for (var i = 1; i <= quantity; i++)
-            {
-                if (i % quantityWithDiscount == 0)
-                    price += unitPrice * discount;
-                else
-                {
-                    price += unitPrice;
-                }
-            }
-            return price;
+            var numberOfDiscountedItems = quantity/quantityWithDiscount;
+            var numberOfNormalItems = quantity - numberOfDiscountedItems;
+            return unitPrice*(numberOfNormalItems + (numberOfDiscountedItems*discount));
         }
     }
 }
