@@ -6,5 +6,10 @@ namespace Utilities.Extendions
         {
             return target == null;
         }
+
+        public static bool IsNotNull(this object target)
+        {
+            return target != null;
+        }
     }
 }

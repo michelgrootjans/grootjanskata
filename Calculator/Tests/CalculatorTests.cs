@@ -1,3 +1,4 @@
+using System;
 using Calc.Code;
 using NUnit.Framework;
 using TestUtilities.Extensions;
@@ -8,22 +9,24 @@ namespace Calc.Tests
     public class CalculatorAddTests
     {
         [Test]
-        public void NullString_ReturnsZero()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void NullString_Throws()
         {
-            string empty = null;
-            Calculator.Add(empty).ShouldBeEqualTo(0);
+            Calculator.Add(null);
         }
 
         [Test]
-        public void EmptyString_ReturnsZero()
+        [ExpectedException(typeof (ArgumentException))]
+        public void EmptyString_Throws()
         {
-            Calculator.Add("").ShouldBeEqualTo(0);
+            Calculator.Add("");
         }
 
         [Test]
-        public void InvalidString_ReturnsZero()
+        [ExpectedException(typeof(ArgumentException))]
+        public void InvalidString_Throws()
         {
-            Calculator.Add("s").ShouldBeEqualTo(0);
+            Calculator.Add("s");
         }
 
         [Test]
@@ -41,13 +44,13 @@ namespace Calc.Tests
         [Test]
         public void TwoNumbers_ReturnsTheSumOfValidNumbers()
         {
-            Calculator.Add("1,s").ShouldBeEqualTo(1);
+            Calculator.Add("1,2").ShouldBeEqualTo(3);
         }
 
         [Test]
         public void ThreeNumbers_ReturnsTheSum()
         {
-            Calculator.Add("1, 2, s, 3").ShouldBeEqualTo(6);
+            Calculator.Add("1, 2, 3").ShouldBeEqualTo(6);
         }
 
         [Test]
@@ -62,16 +65,17 @@ namespace Calc.Tests
     public class CalculatorMultiplyTests
     {
         [Test]
-        public void Null_Returns0()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Null_Throws()
         {
-            string nullString = null;
-            Calculator.Multiply(nullString).ShouldBeEqualTo(1);
+            Calculator.Multiply(null);
         }
 
         [Test]
-        public void Empty_Returns0()
+        [ExpectedException(typeof(ArgumentException))]
+        public void Empty_Throws()
         {
-            Calculator.Multiply("").ShouldBeEqualTo(1);
+            Calculator.Multiply("");
         }
 
         [Test]
@@ -87,9 +91,9 @@ namespace Calc.Tests
         }
 
         [Test]
-        public void TwoNumbers_ReturnsTheTheProductOfTheValidNumbers()
+        public void TwoSeparateNumbers_ReturnsTheTheProduct()
         {
-            Calculator.Multiply("3, s, 4").ShouldBeEqualTo(12);
+            Calculator.Multiply("3","4").ShouldBeEqualTo(12);
         }
 
     }
