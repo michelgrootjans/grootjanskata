@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata1", "Kata1\Kata1.csproj", "{B7C8E173-7A9D-4D11-8B1A-FCF13356EF37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata1_SupermarketPricing", "Kata1\Kata1_SupermarketPricing.csproj", "{B7C8E173-7A9D-4D11-8B1A-FCF13356EF37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUtilities", "TestUtilities\TestUtilities.csproj", "{4815F722-365C-4E15-9C30-7AB4DB44D34A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{90D3B23F-184B-41A2-8AAD-16075F83E3D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calc", "Calculator\Calc.csproj", "{E8D63E85-4BFD-4C2C-B625-C4B29F448313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{90D3B23F-184B-41A2-8AAD-16075F83E3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90D3B23F-184B-41A2-8AAD-16075F83E3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90D3B23F-184B-41A2-8AAD-16075F83E3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D63E85-4BFD-4C2C-B625-C4B29F448313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D63E85-4BFD-4C2C-B625-C4B29F448313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D63E85-4BFD-4C2C-B625-C4B29F448313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D63E85-4BFD-4C2C-B625-C4B29F448313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

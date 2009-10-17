@@ -1,4 +1,4 @@
-using Iesi.Collections.Generic;
+using Iesi.Collections;
 using Utilities.Extendions;
 
 namespace Kata1.Code
